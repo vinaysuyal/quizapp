@@ -1,0 +1,14 @@
+.timerContainer {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.fiveToOne {
+  color: #ff8c00;
+}
+
+.oneToZero {
+  color: #ff0000;
+}
