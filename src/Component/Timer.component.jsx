@@ -18,7 +18,7 @@ const Timer = ({ initialTime, timeUpTrigger }) => {
       clearInterval(interval);
       clearTimeout(timeout);
     };
-  }, []);
+  }, [initialTime, timeUpTrigger]);
 
   let timerClassName = styles.timerContainer;
 

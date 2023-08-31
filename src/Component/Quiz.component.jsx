@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import classes from "../styles/Quiz.module.css";
 import { getQuizData } from "../api/quizApi";
 import Question from "./Question.component";
@@ -39,12 +39,13 @@ const Quiz = ({
         setQuestions(questionsData);
         setLoadingDetails(false);
       });
-  }, []);
+  }, [setQuestions, setLoadingDetails]);
 
-  const endTest = () => {
+  const endTest = useCallback(() => {
     onQuizSubmission();
     setCurrentQuestion(0);
-  };
+  }, [onQuizSubmission]);
+
   const getCorrectQuestionsCount = () => {
     let correctAnswerCount = 0;
     for (let i = 0; i < questions.length; i++) {
@@ -59,7 +60,7 @@ const Quiz = ({
   return (
     <div className={classes.quizContainer}>
       {mode === "quiz" && questions.length > 0 ? (
-        <Timer initialTime={1800} timeUpTrigger={endTest} />
+        <Timer initialTime={14} timeUpTrigger={endTest} />
       ) : (
         mode === "report" && (
           <>
