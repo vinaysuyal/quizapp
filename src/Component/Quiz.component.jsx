@@ -60,7 +60,7 @@ const Quiz = ({
   return (
     <div className={classes.quizContainer}>
       {mode === "quiz" && questions.length > 0 ? (
-        <Timer initialTime={14} timeUpTrigger={endTest} />
+        <Timer initialTime={1800} timeUpTrigger={endTest} />
       ) : (
         mode === "report" && (
           <>
