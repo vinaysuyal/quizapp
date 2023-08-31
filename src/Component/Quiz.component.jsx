@@ -50,10 +50,12 @@ const Quiz = ({
       {mode === "quiz" && questions.length > 0 ? (
         <Timer initialTime={20} timeUpTrigger={endTest} />
       ) : (
-        <>
-          <h4>Test Over...</h4>
-          <h5>You can now compare your answers.</h5>
-        </>
+        mode === "report" && (
+          <>
+            <h4>Test Over...</h4>
+            <h5>You can now compare your answers.</h5>
+          </>
+        )
       )}
 
       {questions.length > 0 && (
