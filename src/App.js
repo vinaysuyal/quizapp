@@ -1,7 +1,6 @@
-import logo from "./logo.svg";
+import { useState } from "react";
 import "./App.css";
 import PreText from "./Component/PreTest.component";
-import { useState } from "react";
 import Quiz from "./Component/Quiz.component";
 
 function App() {
